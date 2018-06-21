@@ -2,6 +2,7 @@ from jenkins_api import *
 from jinja2 import PackageLoader,Environment,FileSystemLoader
 import yaml
 
+
 class Jenkins_Manage(object):
     def __init__(self):
         "init jenkins connection"
@@ -38,6 +39,7 @@ class Jenkins_Manage(object):
             temp = yaml.load(f.read())
         return temp
     def Generate_config(self,ymlfilepath,jobtype):
+        configs = []
         msg = self.Generate_variables(ymlfilepath)
         j2_env = Environment(loader=FileSystemLoader('config'),
                              trim_blocks=True)
@@ -47,9 +49,10 @@ class Jenkins_Manage(object):
         for i in range(length):
             print(msg[jobtype][i])
             rendered_file = template.render(msg[jobtype][i])
-            print('+++++++++++++++++++++++++++++++++++++++')
-            print (rendered_file)
+            configs.append(rendered_file)
+        return configs
     def Create_jobs(self,jobname):
+        configs = 
         check_job = self.Get_jobs(jobname)
         if check_job == None:
             try:
