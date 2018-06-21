@@ -35,6 +35,9 @@ class Jenkins_Manage(object):
         return temp
 
     def Generate_job_config(self,ymlfilepath,jobtype):
+        '''
+            生成job的 xml格式配置文件，以job名为key，xml内容为值
+        '''
         configs = {}
         msg = self.Generate_variables(ymlfilepath)
         j2_env = Environment(loader=FileSystemLoader('config'),
@@ -47,12 +50,15 @@ class Jenkins_Manage(object):
             configs[jobname] = rendered_file
         return configs
 
-    def Create_jobs(self,ymlfilepath,jobtype):
+    def Create_jobs(self,jobheader,ymlfilepath,jobtype):
         configs = self.Generate_job_config(ymlfilepath,jobtype)
         for jobname,config in configs.items():
             self.server.create_job(jobname,config)
 
     def Generate_view_config(self,ymlfilepath,jobtype):
+        '''
+            生成view的 xml格式配置文件，以view名为key，xml内容为值
+        '''
         configs = {}
         msg = self.Generate_variables(ymlfilepath)
         j2_env = Environment(loader=FileSystemLoader('config'),
@@ -82,7 +88,7 @@ class Jenkins_Manage(object):
         print(config)
 
 jm = (Jenkins_Manage())
-#temp = jm.Create_jobs('config/defaults.yml','multibranch_job')
+temp = jm.Create_jobs('config/defaults.yml','multibranch_job')
 #temp = jm.Create_view('test','config/view_config.xml','view_template')
 temp = jm.Create_view('config/defaults.yml','view_template')
 temp = jm.Get_version()
