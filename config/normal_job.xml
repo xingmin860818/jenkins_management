@@ -62,8 +62,8 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>git@git.wecash.net:nanotech/kunshan_service.git</url>
-        <credentialsId>a645a2ad-5aa6-4d3b-afe5-c626473ba6bd</credentialsId>
+        <url>{{ giturl }}</url>
+        <credentialsId>{{ gitcredentialsId }}</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
