@@ -18,16 +18,7 @@ class Jenkins_Manage(object):
                 return True
             else:
                 continue
-    def Create_view(self,viewname):
-        check_view = self.Get_views(viewname)
-        if check_view == None:
-            try:
-                self.server.create_view(viewname,EMPTY_VIEW_CONFIG_XML)
-                return True
-            except Exception as e:
-                return False
-        else:
-            return False
+
     def Get_jobs(self,jobname):
         jobs = self.server.get_jobs()
         for news in jobs:
@@ -36,11 +27,14 @@ class Jenkins_Manage(object):
             else:
                 continue
     def Generate_variables(self,ymlfilepath):
+        '''
+            导入yaml文件，生成变量，使用config/defaults.yml
+        '''
         with open(ymlfilepath,'r') as f:
             temp = yaml.load(f.read())
         return temp
 
-    def Generate_config(self,ymlfilepath,jobtype):
+    def Generate_job_config(self,ymlfilepath,jobtype):
         configs = {}
         msg = self.Generate_variables(ymlfilepath)
         j2_env = Environment(loader=FileSystemLoader('config'),
@@ -54,15 +48,42 @@ class Jenkins_Manage(object):
         return configs
 
     def Create_jobs(self,ymlfilepath,jobtype):
-        configs = self.Generate_config(ymlfilepath,jobtype)
+        configs = self.Generate_job_config(ymlfilepath,jobtype)
         for jobname,config in configs.items():
-           # print (config)
             self.server.create_job(jobname,config)
+
+    def Generate_view_config(self,ymlfilepath,jobtype):
+        configs = {}
+        msg = self.Generate_variables(ymlfilepath)
+        j2_env = Environment(loader=FileSystemLoader('config'),
+                             trim_blocks=True)
+        template = j2_env.get_template('view_config.xml')
+        for i in msg[jobtype]:
+            viewname = i['viewname']
+            rendered_file = template.render(i)
+            configs[viewname] = rendered_file
+        return configs
+
+    def Create_view(self,ymlfilepath,jobtype):
+        '''
+            使用view时，通过编辑view的配置中的Regular expression项设置正则匹配表达式自动关联job，因此，直接使用新的模板即可
+        '''
+        configs = self.Generate_view_config(ymlfilepath,jobtype)
+        for viewname,config in configs.items():
+           # print(viewname,config)
+            self.server.create_view(viewname,config)
         
+
     def Delete_jobs(self,jobname):
         self.server.delete_job(jobname)
+    
+    def Get_view_config(self,viewname):
+        config =  self.server.get_view_config(viewname)
+        print(config)
 
 jm = (Jenkins_Manage())
-#temp = jm.Generate_variables('config/defaults.yml')
-temp = jm.Create_jobs('config/defaults.yml','multibranch_job')
+#temp = jm.Create_jobs('config/defaults.yml','multibranch_job')
+#temp = jm.Create_view('test','config/view_config.xml','view_template')
+temp = jm.Create_view('config/defaults.yml','view_template')
+temp = jm.Get_version()
 print(temp)

@@ -7,3 +7,7 @@ multibranch_job:
     gitcredentialsId: 7bc6cda9-a250-4d99-962c-e2ede002db06
     branch_regex: aaaaaaaaaaaaa|bbbbbbbbbbbbb
     view_name: yyy
+
+view_template:
+    - viewname: TESTC
+      viewregex: test.*
