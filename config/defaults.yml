@@ -1,9 +1,9 @@
 multibranch_job:
-  - giturl: git@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.git
-    gitcredentialsId: 7bc6cda9-a250-4d99-962c-e2ede002db0611111111111111111111111111111111
-    branch_regex: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    view_name: xx3333
-  - giturl: git@yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy.git
-    gitcredentialsId: 7bc6cda9-a250-4d99-962c-e2ede002db0622222222222222222222222222222222
-    branch_regex: tyyyyyyyyyyyyyyyyyyyyyyyyyyy
-    view_name: xx4444
+  - giturl: git@github.com:xingmin860818/xxxxxxjenkins_management.git
+    gitcredentialsId: 7bc6cda9-a250-4d99-962c-e2ede002db06
+    branch_regex: xxxxxxxxxx|yyyyyyyyyyyy
+    view_name: xxx
+  - giturl: git@github.com:xingmin860818/yyyyyyjenkins_management.git
+    gitcredentialsId: 7bc6cda9-a250-4d99-962c-e2ede002db06
+    branch_regex: aaaaaaaaaaaaa|bbbbbbbbbbbbb
+    view_name: yyy

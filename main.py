@@ -1,6 +1,7 @@
 from jenkins_api import *
 from jinja2 import PackageLoader,Environment,FileSystemLoader
 import yaml
+import re
 
 
 class Jenkins_Manage(object):
@@ -38,35 +39,30 @@ class Jenkins_Manage(object):
         with open(ymlfilepath,'r') as f:
             temp = yaml.load(f.read())
         return temp
+
     def Generate_config(self,ymlfilepath,jobtype):
-        configs = []
+        configs = {}
         msg = self.Generate_variables(ymlfilepath)
         j2_env = Environment(loader=FileSystemLoader('config'),
                              trim_blocks=True)
-
         template = j2_env.get_template('multibranch_config.xml')
-        length = len(msg[jobtype])
-        for i in range(length):
-            print(msg[jobtype][i])
-            rendered_file = template.render(msg[jobtype][i])
-            configs.append(rendered_file)
+        for i in msg[jobtype]:
+            # 通过giturl地址，截取项目名称，以此命名jenkins job
+            jobname = re.split(r'[\/,\.]',i['giturl'])[-2]
+            rendered_file = template.render(i)
+            configs[jobname] = rendered_file
         return configs
-    def Create_jobs(self,jobname):
-        configs = 
-        check_job = self.Get_jobs(jobname)
-        if check_job == None:
-            try:
-                self.server.create_job(jobname,EMPTY_CONFIG_XML)
-                return True
-            except Exception as e:
-                return False
-        else:
-            return False
-        
+
+    def Create_jobs(self,ymlfilepath,jobtype):
+        configs = self.Generate_config(ymlfilepath,jobtype)
+        for jobname,config in configs.items():
+           # print (config)
+            self.server.create_job(jobname,config)
         
     def Delete_jobs(self,jobname):
         self.server.delete_job(jobname)
 
 jm = (Jenkins_Manage())
-temp = jm.Generate_config('config/defaults.yml','multibranch_job')
+#temp = jm.Generate_variables('config/defaults.yml')
+temp = jm.Create_jobs('config/defaults.yml','multibranch_job')
 print(temp)
