@@ -42,12 +42,12 @@
       <jenkins.branch.BranchSource>
         <source class="jenkins.plugins.git.GitSCMSource" plugin="git@3.6.4">
           <id>739f245e-c3bb-426b-8246-73fe3d14289f</id>
-          <remote>git@git.wecash.net:renthouse/mywo-crud.git</remote>
-          <credentialsId>7bc6cda9-a250-4d99-962c-e2ede002db06</credentialsId>
+          <remote>{{ giturl }}</remote>
+          <credentialsId>{{ gitcredentialsId }}</credentialsId>
           <traits>
             <jenkins.plugins.git.traits.BranchDiscoveryTrait/>
             <jenkins.scm.impl.trait.RegexSCMHeadFilterTrait plugin="scm-api@2.2.5">
-              <regex>test|release|master|dev</regex>
+              <regex>{{ branch_regex }}</regex>
             </jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
           </traits>
         </source>

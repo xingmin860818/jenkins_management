@@ -1,0 +1,2914 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors>
+    <string>jenkins.security.s2m.MasterKillSwitchWarning</string>
+  </disabledAdministrativeMonitors>
+  <version>2.121.1</version>
+  <installStateName>RESTART</installStateName>
+  <numExecutors>5</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="com.michelin.cio.hudson.plugins.rolestrategy.RoleBasedAuthorizationStrategy">
+    <roleMap type="projectRoles">
+      <role name="BI-caiwu" pattern="(BI-caiwu.*|prod-bi-pangu.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>FncDevCenter</sid>
+        </assignedSIDs>
+      </role>
+      <role name="BIDEV" pattern="(autobuild-bi.*|.*bi-wke.*|prod-bi.*|stage-bi.*|prod-bi-future.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>BIDev</sid>
+        </assignedSIDs>
+      </role>
+      <role name="DataNano" pattern="prod-python-tencent_score">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>DataNano</sid>
+        </assignedSIDs>
+      </role>
+      <role name="NanoOperation" pattern="(.*operation_monitor.*|nano-features-collection_report.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>NanoOperation</sid>
+        </assignedSIDs>
+      </role>
+      <role name="TestVpc" pattern="autobuild-zufang.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>TestVpc</sid>
+        </assignedSIDs>
+      </role>
+      <role name="Ticket" pattern="^[^-]+-data-ticket-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhangzhebin</sid>
+          <sid>zhoumeiyan</sid>
+          <sid>zhangxupeng</sid>
+        </assignedSIDs>
+      </role>
+      <role name="Ticket-test" pattern="^test-data-ticket-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhoumeiyan</sid>
+          <sid>zhangchao</sid>
+        </assignedSIDs>
+      </role>
+      <role name="bi-future" pattern="(prod-bi-future.*|BI-caiwu.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>future_management</sid>
+        </assignedSIDs>
+      </role>
+      <role name="capital" pattern="(capital.*|autobuild-capital.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>CapitalDev</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer" pattern="consumer-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs/>
+      </role>
+      <role name="consumer-apollo" pattern=".*consumer-update-apollo.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>ConsumerDEV</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-backend&#x9;" pattern="(consumer-all.*|consumer-web.*)">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.model.Item.Discover</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>ConsumerDEV</sid>
+          <sid>NanoDEV</sid>
+          <sid>PrimeloanDEV</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-front" pattern="(consumer-front.*|new-consumer-front.*)">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>cterminalfront</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-inti-services" pattern="consumer-devops-init.*">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>ConsumerDEV</sid>
+          <sid>NanoDEV</sid>
+          <sid>PrimeloanDEV</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-mall-manage" pattern="consumer-front_mall_system-test">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.model.Item.Configure</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhanglizhong</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-nginx" pattern="consumer-devops-nginx_.*">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>duchuanchuan</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-sonar-admin" pattern="consumer-devops-sonar.*">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.model.Item.Configure</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>ConsumerDEV</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-upload" pattern="consumer-devops-upload_.*">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>ConsumerDEV</sid>
+          <sid>NanoDEV</sid>
+          <sid>PrimeloanDEV</sid>
+        </assignedSIDs>
+      </role>
+      <role name="consumer-upload-apk" pattern="consumer-devops-upload_apk-prod">
+        <permissions>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.model.Item.Configure</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>chende</sid>
+          <sid>jinxiao</sid>
+        </assignedSIDs>
+      </role>
+      <role name="itopia" pattern="spacebox.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>model_audit</sid>
+        </assignedSIDs>
+      </role>
+      <role name="laopangzi-temp" pattern="prod-tomcat-channelManager-multi">
+        <permissions/>
+        <assignedSIDs>
+          <sid>weirongzhi</sid>
+        </assignedSIDs>
+      </role>
+      <role name="market-front" pattern=".*maket.*front">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs/>
+      </role>
+      <role name="mobile" pattern="mobile-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>mobile</sid>
+        </assignedSIDs>
+      </role>
+      <role name="model" pattern="model.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>model_server_auth</sid>
+          <sid>model</sid>
+        </assignedSIDs>
+      </role>
+      <role name="nano-afb" pattern="(prod-nano-anti.*|test-nano.*|prod-nano.*|autobuild-nano.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>DebtCollectionDevCenter</sid>
+        </assignedSIDs>
+      </role>
+      <role name="nano-debt" pattern="nano-debt.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>DebtCollectionDevCenter</sid>
+        </assignedSIDs>
+      </role>
+      <role name="near-prime-alone" pattern="autobuild-nano-near.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>wangguanxiong</sid>
+        </assignedSIDs>
+      </role>
+      <role name="nxb-seer" pattern="(prod-seer.*|test-nxb.*|release-nxb.*|autobuild-nzb.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhujinbaoxiangmu</sid>
+        </assignedSIDs>
+      </role>
+      <role name="o2o" pattern="o2o.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>O2oDev</sid>
+        </assignedSIDs>
+      </role>
+      <role name="pmarket" pattern="market.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>corp_market_serverAuthority_dev</sid>
+          <sid>xianjinka</sid>
+        </assignedSIDs>
+      </role>
+      <role name="pmarket-front" pattern="test-market.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>marketLotteryFrontDev</sid>
+          <sid>corp_market_serverAuthority_dev</sid>
+        </assignedSIDs>
+      </role>
+      <role name="pmarket-front2" pattern="prod-market.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>marketLotteryFrontDev</sid>
+          <sid>corp_market_serverAuthority_dev</sid>
+        </assignedSIDs>
+      </role>
+      <role name="prime-alone" pattern="prod-nano-prime.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhouzhaoqiang</sid>
+        </assignedSIDs>
+      </role>
+      <role name="prime-loan" pattern="(.*prime-preauditor.*|prime.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>NanoCreditModel</sid>
+          <sid>nearprime</sid>
+          <sid>daedai</sid>
+        </assignedSIDs>
+      </role>
+      <role name="proxy_pool" pattern="proxy-pool.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>chenteng</sid>
+          <sid>liujinjun</sid>
+        </assignedSIDs>
+      </role>
+      <role name="quant" pattern=".*quant.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>LhtfDev</sid>
+        </assignedSIDs>
+      </role>
+      <role name="renthouse" pattern=".*zufang.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>meiwozufang</sid>
+        </assignedSIDs>
+      </role>
+      <role name="xlab" pattern="xlab.*">
+        <permissions>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.model.Item.Configure</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>xlab</sid>
+        </assignedSIDs>
+      </role>
+      <role name="开放平台" pattern="(^.*-pingtai-cn$|^[^-]+-data-pingtai-[^-]+-[^-]*$|autobuild-data-pingtai)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhangzhebin</sid>
+          <sid>zhoumeiyan</sid>
+          <sid>dongbaowen</sid>
+          <sid>zhoulucong</sid>
+          <sid>zhangtingshu</sid>
+          <sid>dingmingyang</sid>
+          <sid>wenbingyan</sid>
+          <sid>zhangxupeng</sid>
+          <sid>chenyan</sid>
+          <sid>dingyabin</sid>
+          <sid>pingtai</sid>
+        </assignedSIDs>
+      </role>
+      <role name="开放平台-测试" pattern="^test-data-pingtai-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhoumeiyan</sid>
+          <sid>zhoulucong</sid>
+          <sid>zhangtingshu</sid>
+          <sid>dingmingyang</sid>
+          <sid>wenbingyan</sid>
+          <sid>dingyabin</sid>
+          <sid>pingtai</sid>
+        </assignedSIDs>
+      </role>
+      <role name="数据运营" pattern="(测试|正式)-数据运营">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>data</sid>
+        </assignedSIDs>
+      </role>
+      <role name="数据运营-项目" pattern="(测试|正式)-数据运营/(test|prod)-(tomcat|microservice|node|jar|python)-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Delete</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>data</sid>
+        </assignedSIDs>
+      </role>
+      <role name="数据运营巴西" pattern="巴西项目.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Delete</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>data</sid>
+        </assignedSIDs>
+      </role>
+      <role name="爬虫" pattern="^[^-]+-data-crawlers-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhangzhebin</sid>
+          <sid>zhoumeiyan</sid>
+          <sid>zhangxupeng</sid>
+          <sid>zhanghao2</sid>
+          <sid>tanyunlong</sid>
+          <sid>zhangchao</sid>
+          <sid>zhangzhifa</sid>
+          <sid>crawlers</sid>
+        </assignedSIDs>
+      </role>
+      <role name="爬虫-测试" pattern="^(test|canary)-data-crawlers-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhoumeiyan</sid>
+          <sid>huijiangzhou</sid>
+          <sid>suhongqing</sid>
+          <sid>zhangxupeng</sid>
+          <sid>zhanghao2</sid>
+          <sid>tanyunlong</sid>
+          <sid>zhangzhifa</sid>
+          <sid>crawlers</sid>
+        </assignedSIDs>
+      </role>
+      <role name="纳米信贷模型" pattern="(nano-features.*|autobuild-nano-feature.*)">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>NanoCreditModel</sid>
+          <sid>nearprime</sid>
+        </assignedSIDs>
+      </role>
+      <role name="运营商" pattern="^[^-]+-data-operators-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhangzhebin</sid>
+          <sid>operators</sid>
+          <sid>tanyunlong</sid>
+          <sid>crawlers</sid>
+        </assignedSIDs>
+      </role>
+      <role name="闪盾" pattern="^[^-]+-data-shandun-.*">
+        <permissions>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>zhangchao</sid>
+        </assignedSIDs>
+      </role>
+    </roleMap>
+    <roleMap type="globalRoles">
+      <role name="admin" pattern=".*">
+        <permissions>
+          <permission>hudson.model.View.Delete</permission>
+          <permission>hudson.model.Computer.Connect</permission>
+          <permission>hudson.model.Run.Delete</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains</permission>
+          <permission>hudson.model.Computer.Create</permission>
+          <permission>hudson.model.View.Configure</permission>
+          <permission>jenkins.metrics.api.Metrics.View</permission>
+          <permission>hudson.model.Computer.Build</permission>
+          <permission>hudson.model.Item.Configure</permission>
+          <permission>hudson.model.Hudson.Administer</permission>
+          <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Read</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View</permission>
+          <permission>hudson.model.Computer.Delete</permission>
+          <permission>jenkins.metrics.api.Metrics.HealthCheck</permission>
+          <permission>hudson.model.Item.Build</permission>
+          <permission>hudson.scm.SCM.Tag</permission>
+          <permission>hudson.model.Item.Move</permission>
+          <permission>hudson.model.Item.Discover</permission>
+          <permission>hudson.model.Hudson.Read</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update</permission>
+          <permission>hudson.model.Item.Release</permission>
+          <permission>hudson.model.Item.Create</permission>
+          <permission>hudson.model.Item.Workspace</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete</permission>
+          <permission>hudson.model.Run.Replay</permission>
+          <permission>jenkins.metrics.api.Metrics.ThreadDump</permission>
+          <permission>hudson.model.View.Read</permission>
+          <permission>hudson.model.View.Create</permission>
+          <permission>hudson.model.Item.Delete</permission>
+          <permission>hudson.model.Computer.Configure</permission>
+          <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create</permission>
+          <permission>hudson.model.Computer.Disconnect</permission>
+          <permission>hudson.model.Run.Update</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>yunwei</sid>
+          <sid>lanshanzhang</sid>
+        </assignedSIDs>
+      </role>
+      <role name="dev" pattern=".*">
+        <permissions>
+          <permission>hudson.model.Hudson.Read</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>chenteng</sid>
+          <sid>data</sid>
+          <sid>huijiangzhou</sid>
+          <sid>xuejipeng</sid>
+          <sid>BIDev</sid>
+          <sid>corp_market_serverAuthority_dev</sid>
+          <sid>suhongqing</sid>
+          <sid>NanoOperation</sid>
+          <sid>chende</sid>
+          <sid>future_management</sid>
+          <sid>model</sid>
+          <sid>marketLotteryFrontDev</sid>
+          <sid>ConsumerDEV</sid>
+          <sid>meiwozufang</sid>
+          <sid>dingmingyang</sid>
+          <sid>jinxiao</sid>
+          <sid>O2oDev</sid>
+          <sid>zhanghao2</sid>
+          <sid>xlab</sid>
+          <sid>cterminalfront</sid>
+          <sid>daedai</sid>
+          <sid>zhouzhaoqiang</sid>
+          <sid>NanoCreditModel</sid>
+          <sid>model_server_auth</sid>
+          <sid>nearprime</sid>
+          <sid>TestVpc</sid>
+          <sid>CapitalDev</sid>
+          <sid>crawlers</sid>
+          <sid>wangguanxiong</sid>
+          <sid>LhtfDev</sid>
+          <sid>shebao</sid>
+          <sid>NanoDEV</sid>
+          <sid>PrimeloanDEV</sid>
+          <sid>pingtai</sid>
+          <sid>model_audit</sid>
+          <sid>dongbaowen</sid>
+          <sid>zhoulucong</sid>
+          <sid>operators</sid>
+          <sid>zhangxupeng</sid>
+          <sid>client_sms</sid>
+          <sid>dingyabin</sid>
+          <sid>wuxiaolan</sid>
+          <sid>zhoumeiyan</sid>
+          <sid>dingziran</sid>
+          <sid>DataNano</sid>
+          <sid>mobile</sid>
+          <sid>duchuanchuan</sid>
+          <sid>xianjinka</sid>
+          <sid>FncDevCenter</sid>
+          <sid>DebtCollectionDevCenter</sid>
+          <sid>liujinjun</sid>
+          <sid>zhujinbaoxiangmu</sid>
+        </assignedSIDs>
+      </role>
+      <role name="manager" pattern=".*">
+        <permissions>
+          <permission>hudson.model.Hudson.Read</permission>
+          <permission>hudson.model.Item.Configure</permission>
+        </permissions>
+        <assignedSIDs>
+          <sid>cuiluzhe</sid>
+          <sid>xuejipeng</sid>
+          <sid>dengwenbin</sid>
+          <sid>O2oDev</sid>
+        </assignedSIDs>
+      </role>
+    </roleMap>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.LDAPSecurityRealm" plugin="ldap@1.20">
+    <disableMailAddressResolver>false</disableMailAddressResolver>
+    <configurations>
+      <jenkins.security.plugins.ldap.LDAPConfiguration>
+        <server>ldaps://ldap.wecash.net</server>
+        <rootDN>dc=wecash,dc=net</rootDN>
+        <inhibitInferRootDN>false</inhibitInferRootDN>
+        <userSearchBase></userSearchBase>
+        <userSearch>uid={0}</userSearch>
+        <groupMembershipStrategy class="jenkins.security.plugins.ldap.FromGroupSearchLDAPGroupMembershipStrategy">
+          <filter></filter>
+        </groupMembershipStrategy>
+        <managerPasswordSecret>{AQAAABAAAAAQtQnFiycVjzGMge7YD86aFTEdQQAcaTay95B8n/GTF1M=}</managerPasswordSecret>
+        <displayNameAttributeName>displayname</displayNameAttributeName>
+        <mailAddressAttributeName>mail</mailAddressAttributeName>
+        <ignoreIfUnavailable>false</ignoreIfUnavailable>
+        <extraEnvVars class="linked-hash-map">
+          <entry>
+            <string></string>
+            <string></string>
+          </entry>
+        </extraEnvVars>
+      </jenkins.security.plugins.ldap.LDAPConfiguration>
+    </configurations>
+    <userIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive"/>
+    <groupIdStrategy class="jenkins.model.IdStrategy$CaseInsensitive"/>
+    <disableRolePrefixing>true</disableRolePrefixing>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULLNAME}</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+  <jdks>
+    <jdk>
+      <name>jdk1.8</name>
+      <home>/usr/local/jdk</home>
+      <properties/>
+    </jdk>
+    <jdk>
+      <name>Oracle JDK 8</name>
+      <home></home>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <hudson.tools.JDKInstaller plugin="jdk-tool@1.0">
+              <id>jdk-8u131-oth-JPR</id>
+              <acceptLicense>true</acceptLicense>
+            </hudson.tools.JDKInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+    </jdk>
+    <jdk>
+      <name>Oracle JDK 7</name>
+      <home></home>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <hudson.tools.JDKInstaller plugin="jdk-tool@1.0">
+              <id>jdk-7u80-oth-JPR</id>
+              <acceptLicense>true</acceptLicense>
+            </hudson.tools.JDKInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+    </jdk>
+    <jdk>
+      <name>jdk1.8.0_131</name>
+      <home>/usr/local/jdk1.8.0_131/</home>
+      <properties/>
+    </jdk>
+    <jdk>
+      <name>jdk1.8.0_74</name>
+      <home>/usr/local/jdk1.8.0_74</home>
+      <properties/>
+    </jdk>
+  </jdks>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>5</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>all</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>capital-platform-API</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>capital-merchant-api</string>
+        <string>capital-platform-deposit-front-prod</string>
+        <string>capital-platform-job-prod</string>
+        <string>capital-platform-release-task</string>
+        <string>capital-platform-release-timer</string>
+        <string>capital-platform-release-web</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>nano-debt-prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+        <string>prod-nano-cloud-asr</string>
+        <string>prod-nano-cloud-data</string>
+        <string>prod-nano-cloud-debt-front</string>
+        <string>prod-nano-cloud-debt-timer</string>
+        <string>prod-nano-cloud-debt-web</string>
+        <string>prod-nano-cloud-debt-zc360-timer</string>
+        <string>prod-nano-cloud-eureka-web</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>纳米信贷</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>nano-features-12306-prod</string>
+        <string>nano-features-51gjj-prod</string>
+        <string>nano-features-anti_fraud-prod</string>
+        <string>nano-features-anti_fraud_2.0-prod</string>
+        <string>nano-features-assert360-prod</string>
+        <string>nano-features-collection_report-prod</string>
+        <string>nano-features-contact_names-prod</string>
+        <string>nano-features-crawler_data_save-prod</string>
+        <string>nano-features-cuishou-prod</string>
+        <string>nano-features-dbr-prod</string>
+        <string>nano-features-debitcard-prod</string>
+        <string>nano-features-edu-prod</string>
+        <string>nano-features-eleme_features-prod</string>
+        <string>nano-features-features-monitor-prod</string>
+        <string>nano-features-fpd_predict-prod</string>
+        <string>nano-features-fraud_human-prod</string>
+        <string>nano-features-friends_history-prod</string>
+        <string>nano-features-is_extension-prod</string>
+        <string>nano-features-jd_patch-prod</string>
+        <string>nano-features-jingd-new-prod</string>
+        <string>nano-features-jingd-prod</string>
+        <string>nano-features-juxinli-prod</string>
+        <string>nano-features-log-monitor-prod</string>
+        <string>nano-features-mall_amount-prod</string>
+        <string>nano-features-mall_antifraud-prod</string>
+        <string>nano-features-mall_monitor-prod</string>
+        <string>nano-features-nano-score-prod</string>
+        <string>nano-features-near_prime_fraud_human-prod</string>
+        <string>nano-features-new_customer-prod</string>
+        <string>nano-features-open-platform-prod</string>
+        <string>nano-features-operation_monitor-prod</string>
+        <string>nano-features-opreator-prod</string>
+        <string>nano-features-payday_model-prod</string>
+        <string>nano-features-payday_monitor-prod</string>
+        <string>nano-features-payday_summery-prod</string>
+        <string>nano-features-prime_summary-prod</string>
+        <string>nano-features-product_classify-prod</string>
+        <string>nano-features-Restart-project</string>
+        <string>nano-features-restart_payday_model</string>
+        <string>nano-features-routing-prod</string>
+        <string>nano-features-score_model-prod</string>
+        <string>nano-features-services_monitor</string>
+        <string>nano-features-sms-prod</string>
+        <string>nano-features-snapshot-prod</string>
+        <string>nano-features-taobao-new-prod</string>
+        <string>nano-features-taobao-prod</string>
+        <string>nano-features-tunaikitacall-prod</string>
+        <string>nano-features-zero_cost_model-prod</string>
+        <string>restart-nano-sms</string>
+        <string>temp-frinds</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>PingTai-Prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>(^.*-pingtai-cn$|^[^-]+-data-pingtai-[^-]+-[^-]*$|autobuild-data-pingtai)</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>市场部正式环境</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>market-active-prod</string>
+        <string>market-everybody_lottery-backend</string>
+        <string>market-lottery-front-prod</string>
+        <string>market-lottery_monitor</string>
+        <string>market-mshebao-front-prod</string>
+        <string>market-mshebao-guanwang</string>
+        <string>market-mshebao_01-front-prod</string>
+        <string>market-new-super-social</string>
+        <string>market-shebao-bank-card</string>
+        <string>market-shebao-front</string>
+        <string>market-shebao-insurance_mall</string>
+        <string>market-social_security_admin</string>
+        <string>market-sys-shebao-front-prod</string>
+        <string>market-v_card_niu</string>
+        <string>market-wecash-pay-backend-prod</string>
+        <string>market-wecash-pay-front</string>
+        <string>market-wecash-pay-monitor</string>
+        <string>market-wecash-watcher-front</string>
+        <string>market-wecash_channel_plateform_prod</string>
+        <string>prod-market-answer-frontend</string>
+        <string>prod-market-drawing-backend</string>
+        <string>prod-market-drawing-one-yuan-front</string>
+        <string>prod-market-drawing-one-yuanB-front</string>
+        <string>prod-market-luban-backend</string>
+        <string>prod-market-mingjing-wecash-pay-cat</string>
+        <string>prod-market-waistcoat-backend</string>
+        <string>prod-market-wecash-pudge-backend</string>
+        <string>prod-market-wecash_notification-backend</string>
+        <string>prod-market-wecash_workflow-backend</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>BI-caiwu</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[5]/jobNames/comparator"/>
+        <string>BI-caiwu-fair-entry</string>
+        <string>BI-caiwu-fair-handle</string>
+        <string>BI-caiwu-fair-interfaze</string>
+        <string>BI-caiwu-fair-job</string>
+        <string>prod-bi-pangu-task</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Mobile</name>
+      <description>移动开发 使用view</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[5]/jobNames/comparator"/>
+        <string>mobile-MDCOnlineBackend</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>市场部测试环境</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>market-everybody_lottery-test-backend</string>
+        <string>market-lottery-test</string>
+        <string>market-mshebao-front-test</string>
+        <string>market-mshebao_01-front-test</string>
+        <string>market-sys-shebao-front-test</string>
+        <string>market-wecash-channel_platform-backend-test</string>
+        <string>market-wecash-pay-backend-test</string>
+        <string>market-wecash-pay-front-test</string>
+        <string>test-market-answer-frontend</string>
+        <string>test-market-collectionAnalyser-cat</string>
+        <string>test-market-drawing-backend</string>
+        <string>test-market-drawing-one-yuan-front</string>
+        <string>test-market-drawing-one-yuanB-front</string>
+        <string>test-market-mingjing-wecash-pay-cat</string>
+        <string>test-market-waistcoat-backend</string>
+        <string>test-market-wecash-pudge-backend</string>
+        <string>test-market-wecash-v-card-backend</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>model_ol_test</name>
+      <description>10.41.58.233   服务安装主机</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>data_center_snapshot</string>
+        <string>dev_model_deploy_for_ansible</string>
+        <string>modelol1_before_loan_test</string>
+        <string>modelol1_edu_social_score_test</string>
+        <string>modelol1_jd_model_test</string>
+        <string>modelol1_wecash_credit_liability_history_module_test</string>
+        <string>modelol1_wecash_operator_strategy_test</string>
+        <string>modelol1_wecash_taobao_model_test</string>
+        <string>modelol1_wemanual_repay_record_test</string>
+        <string>modelol_advanced_anti_fraud_module_test</string>
+        <string>modelol_advanced_beforeloan_module_test</string>
+        <string>modelol_advanced_income_module_test</string>
+        <string>modelol_credit_card_module_test</string>
+        <string>modelol_data_center_customer_test</string>
+        <string>modelol_data_center_extra_customer_test</string>
+        <string>modelol_data_center_snapshot_celery_test</string>
+        <string>modelol_data_center_snapshot_test</string>
+        <string>modelol_data_center_test</string>
+        <string>modelol_dc_user_operation_record_test</string>
+        <string>modelol_external_api_module_test</string>
+        <string>modelol_graph_data_operations_test</string>
+        <string>modelol_graph_db_celery_test</string>
+        <string>modelol_graph_features_interface_test</string>
+        <string>modelol_model_business_user_evaluation_test</string>
+        <string>modelol_model_data_query_center_test</string>
+        <string>modelol_model_data_receiver_ol3_test</string>
+        <string>modelol_model_data_receiver_test</string>
+        <string>modelol_model_profile_center_test</string>
+        <string>modelol_score_card_ol3_pipeline</string>
+        <string>modelol_score_card_ol3_test</string>
+        <string>modelol_shallow_antifraud_module_test</string>
+        <string>modelol_shallow_base_module_test</string>
+        <string>modelol_shallow_black_module_test</string>
+        <string>modelol_shallow_ch_module_test</string>
+        <string>modelol_shallow_cm_module_test</string>
+        <string>modelol_shallow_creditreport_module_test</string>
+        <string>modelol_shallow_cross_module_test</string>
+        <string>modelol_shallow_data01_module_test</string>
+        <string>modelol_shallow_debit_card_module_test</string>
+        <string>modelol_shallow_edu_work_module_test</string>
+        <string>modelol_shallow_ext_test</string>
+        <string>modelol_shallow_extract_module_test</string>
+        <string>modelol_shallow_jd_module_test</string>
+        <string>modelol_shallow_op_module_test</string>
+        <string>modelol_shallow_sms_module_test</string>
+        <string>modelol_shallow_tb_module_test</string>
+        <string>modelol_shallow_work_module_test</string>
+        <string>modelol_tbclassify_test</string>
+        <string>modelol_user_data_snapshot_test</string>
+        <string>modelol_wecash_tianyancha_model_test</string>
+        <string>modelol_wecash_zero_test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>model-ol-prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[9]/jobNames/comparator"/>
+        <string>model-rsync-prod</string>
+        <string>model_deploy_for_ansible</string>
+        <string>modelol1_before_loan_prod</string>
+        <string>modelol1_edu_social_score_prod</string>
+        <string>modelol1_jd_model_prod</string>
+        <string>modelol1_wecash_credit_liability_history_module_prod</string>
+        <string>modelol1_wecash_operator_strategy_prod</string>
+        <string>modelol1_wecash_taobao_model_prod</string>
+        <string>modelol1_wemanual_repay_record_prod</string>
+        <string>modelol_advanced_anti_fraud_module_prod</string>
+        <string>modelol_advanced_beforeloan_module_prod</string>
+        <string>modelol_advanced_debt_module_prod</string>
+        <string>modelol_advanced_debt_module_test</string>
+        <string>modelol_advanced_income_module_prod</string>
+        <string>modelol_advanced_stable_module_prod</string>
+        <string>modelol_credit_card_module_prod</string>
+        <string>modelol_data_center</string>
+        <string>modelol_data_center_customer</string>
+        <string>modelol_data_center_extra_customer_prod</string>
+        <string>modelol_data_center_flower</string>
+        <string>modelol_data_center_snapshot_celery_prod</string>
+        <string>modelol_data_center_snapshot_extra_customer_prod</string>
+        <string>modelol_data_center_snapshot_prod</string>
+        <string>modelol_DataCollector_prod</string>
+        <string>modelol_db_utils_server</string>
+        <string>modelol_dc_user_operation_record</string>
+        <string>modelol_dl_account_operations_prod</string>
+        <string>modelol_external_api_module_prod</string>
+        <string>modelol_graph_data_operations_prod</string>
+        <string>modelol_graph_db_celery_flower</string>
+        <string>modelol_graph_db_celery_prod</string>
+        <string>modelol_graph_features_interface_prod</string>
+        <string>modelol_mis_airflow_prod</string>
+        <string>modelol_mis_data_quality_prod</string>
+        <string>modelol_mis_prod</string>
+        <string>modelol_model_business_user_evaluation_prod</string>
+        <string>modelol_model_credit_interface_prod</string>
+        <string>modelol_model_data_query_center_prod</string>
+        <string>modelol_model_data_receiver_flower</string>
+        <string>modelol_model_data_receiver_ol3_flower</string>
+        <string>modelol_model_data_receiver_ol3_prod</string>
+        <string>modelol_model_data_receiver_prod</string>
+        <string>modelol_model_profile_center_prod</string>
+        <string>modelol_score_card_ol3_prod</string>
+        <string>modelol_shallow_antifraud_module_prod</string>
+        <string>modelol_shallow_base_module_prod</string>
+        <string>modelol_shallow_black_module_prod</string>
+        <string>modelol_shallow_ch_module_prod</string>
+        <string>modelol_shallow_cm_module</string>
+        <string>modelol_shallow_creditreport_module_prod</string>
+        <string>modelol_shallow_cross_module_prod</string>
+        <string>modelol_shallow_data01_module_prod</string>
+        <string>modelol_shallow_debit_card_module_prod</string>
+        <string>modelol_shallow_edu_work_module_prod</string>
+        <string>modelol_shallow_ext_prod</string>
+        <string>modelol_shallow_extract_module_prod</string>
+        <string>modelol_shallow_jd_module_prod</string>
+        <string>modelol_shallow_op_module_prod</string>
+        <string>modelol_shallow_sms_module_prod</string>
+        <string>modelol_shallow_tb_module_prod</string>
+        <string>modelol_shallow_work_module_prod</string>
+        <string>modelol_tbclassify_prod</string>
+        <string>modelol_tester_prod</string>
+        <string>modelol_third_trace_data_prod</string>
+        <string>modelol_user_data_snapshot_prod</string>
+        <string>modelol_wecash_tianyancha_model_prod</string>
+        <string>modelol_wecash_zero_prod</string>
+        <string>modeol1_wecash_rate_strategy_prod</string>
+        <string>wesync</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>model_audit_prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>modelaud_phone_audio_download_prod</string>
+        <string>modelaud_phone_call_prod</string>
+        <string>modelaud_telephone_tag_monitor_prod</string>
+        <string>modelaud_telephone_tag_prod</string>
+        <string>modelaud_wecash_elite_prequalified_candidates_prod</string>
+        <string>modelaud_wecash_largeloan_creditreport_prod</string>
+        <string>modelaud_wecash_largeloan_router_prod</string>
+        <string>modelaud_wecash_mining_apis_prod</string>
+        <string>modelaud_wecash_mining_employer_prod</string>
+        <string>modelaud_wecash_mining_engine_prod</string>
+        <string>modelaud_wecash_mining_monitor_prod</string>
+        <string>modelaud_wecash_mining_router_prod</string>
+        <string>modelaud_wecash_o2o_consumer_prod</string>
+        <string>modelaud_wecash_o2o_payday_server_prod</string>
+        <string>modelaud_wecash_o2o_rent_mobile_prod</string>
+        <string>modelaud_wecash_o2o_rental_router_prod</string>
+        <string>modelaud_wecash_o2o_router_prod</string>
+        <string>modelaud_wecash_o2o_system_prod</string>
+        <string>modelaud_wecash_phone_model_prod</string>
+        <string>modelaud_wecash_phonebook_api_prod</string>
+        <string>modelaud_wecash_phonebook_risk_api_prod</string>
+        <string>modelaud_wecash_restful_apis_prod</string>
+        <string>modelaud_wecash_sms_api_prod</string>
+        <string>modelaudit_installment_backend_pusher_prod</string>
+        <string>modelaudit_online_loan_consume_prod</string>
+        <string>modelaudit_online_loan_router_prod</string>
+        <string>modelaudit_wecash_installment_loan_prod</string>
+        <string>modelaudit_wecash_installment_preauditor_prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>model_audit_test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
+        <string>modelaud_wecash_largeloan_creditreport_test</string>
+        <string>modelaud_wecash_largeloan_router_test</string>
+        <string>modelaud_wecash_o2o_consumer_test</string>
+        <string>modelaud_wecash_o2o_payday_server_test</string>
+        <string>modelaud_wecash_o2o_rent_mobile_test</string>
+        <string>modelaud_wecash_o2o_rental_router_test</string>
+        <string>modelaud_wecash_o2o_router_test</string>
+        <string>modelaud_wecash_o2o_system_test</string>
+        <string>modelaudit_installment_backend_pusher_test</string>
+        <string>modelaudit_online_loan_consume_test</string>
+        <string>modelaudit_online_loan_router_test</string>
+        <string>modelaudit_telephone_tag_monitor_test</string>
+        <string>modelaudit_wecash_installment_loan_test</string>
+        <string>modelaudit_wecash_installment_preauditor_test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>nxb-seer-platfrom</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
+        <string>prod-seer-front</string>
+        <string>prod-seer_app-nxb-cat</string>
+        <string>prod-seer_task-jar</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>spacebox-prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
+        <string>itopia-backend_prod</string>
+        <string>itopia-spacebox-scheduler-prod</string>
+        <string>spacebox-activity-prod</string>
+        <string>spacebox-devops-upload_apk-prod</string>
+        <string>spacebox-management-frontend-prod</string>
+        <string>spacebox-management-prod</string>
+        <string>spacebox-official-website-prod</string>
+        <string>spacebox_socket_server_prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Operators</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>^[^-]+-data-operators-[^-]+-[^-]*$</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>nano-Anti_Fraud-prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
+        <string>prod-nano-anti_fraud-report-jar</string>
+        <string>prod-nano-anti_fraud-web</string>
+        <string>prod-nano-anti_fraud-wke-ii-dubbo</string>
+        <string>prod-nano-anti_fraud-wke-timer-prod</string>
+        <string>prod-nano-cloud-postloan</string>
+        <string>prod-nano-wke-zc360-web</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>nano-af-debt-test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>test-deploy</string>
+        <string>test-nano-anti_fraud-web</string>
+        <string>test-nano-cloud-af</string>
+        <string>test-nano-cloud-asr</string>
+        <string>test-nano-cloud-contact-center</string>
+        <string>test-nano-cloud-debt-web-backend</string>
+        <string>test-nano-cloud-eureka-web</string>
+        <string>test-nano-cloud-postloan-timer</string>
+        <string>test-nano-cloud-postloan-web</string>
+        <string>test-nano-postloan-web</string>
+        <string>test-nano-sys-front</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>model-o2o-prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[17]/jobNames/comparator"/>
+        <string>modelo2o-config-upload</string>
+        <string>modelo2o-monitor-via-airflow_prod</string>
+        <string>modelo2o_airflow_o2o_watch_dogs_prod</string>
+        <string>modelo2o_auto_sphinx_docs_prod</string>
+        <string>modelo2o_credit_quota_control_prod</string>
+        <string>modelo2o_feature_labs_prod</string>
+        <string>modelo2o_o2o-score-frontpage_prod</string>
+        <string>modelo2o_o2o_auth_toolkit_prod</string>
+        <string>modelo2o_o2o_channel_risk_control_prod</string>
+        <string>modelo2o_o2o_channel_risk_website_prod</string>
+        <string>modelo2o_o2o_watch_dogs_prod</string>
+        <string>modelo2o_online_feature_engineering_prod</string>
+        <string>modelo2o_outside_startup_model_prod</string>
+        <string>modelo2o_PoolCreditScoring_prod</string>
+        <string>modelo2o_PoolCreditScoring_py3_prod</string>
+        <string>modelo2o_wecash_o2o_channel_management_prod</string>
+        <string>modelo2o_wecash_o2o_feature_engineering_prod</string>
+        <string>modelo2o_wecash_o2o_interface_prod</string>
+        <string>modelo2o_wecash_o2o_online_model_prod</string>
+        <string>modelo2o_wecash_o2o_online_model_py3_prod</string>
+        <string>modelo2o_wecash_o2o_rent_mobile</string>
+        <string>modelo2o_wecash_o2o_server_prod</string>
+        <string>modelo2o_wecash_operator_analysis_prod</string>
+        <string>modelo2o_wecash_overdue_info_prod</string>
+        <string>modelo2o_wecash_ym_scorecard_prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>model-o2o-test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[17]/jobNames/comparator"/>
+        <string>modelo2o-monitor-via-airflow_test</string>
+        <string>modelo2o_credit_quota_control_test</string>
+        <string>modelo2o_feature_labs_test</string>
+        <string>modelo2o_o2o-score-frontpage_test</string>
+        <string>modelo2o_o2o_auth_toolkit_test</string>
+        <string>modelo2o_o2o_watch_dogs_test</string>
+        <string>modelo2o_online_feature_engineering_test</string>
+        <string>modelo2o_outside_startup_model_test</string>
+        <string>modelo2o_PoolCreditScoring_py3_test</string>
+        <string>modelo2o_PoolCreditScoring_test</string>
+        <string>modelo2o_wecash_o2o_channel_management_test</string>
+        <string>modelo2o_wecash_o2o_feature_engineering_test</string>
+        <string>modelo2o_wecash_o2o_interface_test</string>
+        <string>modelo2o_wecash_o2o_online_model_py3_test</string>
+        <string>modelo2o_wecash_o2o_online_model_test</string>
+        <string>modelo2o_wecash_o2o_server_test</string>
+        <string>modelo2o_wecash_overdue_info_test</string>
+        <string>modelo2o_wecash_ym_scorecard_test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-mwzufang</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[17]/jobNames/comparator"/>
+        <string>autobuild-mywosentry-test</string>
+        <string>autobuild-zufang-app-front</string>
+        <string>autobuild-zufang-control</string>
+        <string>autobuild-zufang-corps_commander</string>
+        <string>autobuild-zufang-disCrawler-tomcat</string>
+        <string>autobuild-zufang-house_system-tomcat</string>
+        <string>autobuild-zufang-houseCenter-tomcat</string>
+        <string>autobuild-zufang-housekeeper-pc-front</string>
+        <string>autobuild-zufang-houseSearch-tomcat</string>
+        <string>autobuild-zufang-meiwo-admin-front</string>
+        <string>autobuild-zufang-mywo-admin-fed-tomcat</string>
+        <string>autobuild-zufang-mywo-crud</string>
+        <string>autobuild-zufang-mywo-decorate</string>
+        <string>autobuild-zufang-mywo-medusa-front</string>
+        <string>autobuild-zufang-mywo-sentry</string>
+        <string>autobuild-zufang-mywo-tomcat</string>
+        <string>autobuild-zufang-pit-lord</string>
+        <string>autobuild-zufang-quartz-monitor-tomcat</string>
+        <string>autobuild-zufang-quick-response</string>
+        <string>autobuild-zufang-rent-house-message</string>
+        <string>autobuild-zufang-rent_house-tomcat</string>
+        <string>autobuild-zufang-renthouse-jobs</string>
+        <string>autobuild-zufang-renttest</string>
+        <string>autobuild-zufang-rh-corp-front</string>
+        <string>autobuild-zufang-rh_trade</string>
+        <string>autobuild-zufang-sven-steel-front</string>
+        <string>autobuild-zufang-zufang-front</string>
+        <string>autotest</string>
+        <string>test-mywo</string>
+        <string>test-zufang-meiwo-guanjia</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Crawlers-Prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>^prod-data-crawlers-.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Crawlers-Test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[21]/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>^(test|canary)-data-crawlers-.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>大额贷正式</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>prime-51gjj-prod</string>
+        <string>prime-anti_fraud_pl-prod</string>
+        <string>prime-cuishou_level-prod</string>
+        <string>prime-daily_report-prod</string>
+        <string>prime-debit_card-prod</string>
+        <string>prime-kunshan-prod</string>
+        <string>prime-largeloan_overdue_weekly_report-prod</string>
+        <string>prime-mail_monitor-prod</string>
+        <string>prime-nano_taobao-prod</string>
+        <string>prime-nearprime_model-prod</string>
+        <string>prime-nearprime_summary-prod</string>
+        <string>prime-operator-prod</string>
+        <string>prime-taobao_feature_new-prod</string>
+        <string>prod-prime-preauditor</string>
+        <string>test-prime-preauditor</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>信用商城</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[23]/jobNames/comparator"/>
+        <string>model_cm_coefficient_module_prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Pingtai-Test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[23]/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>^test-data-pingtai-.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>mwzufang-front</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[23]/jobNames/comparator"/>
+        <string>prod-zufang-guangzhou</string>
+        <string>prod-zufang-meiwo-guanjia</string>
+        <string>prod-zufang-meiwo-zufang</string>
+        <string>prod-zufang-www</string>
+        <string>stage-zufang-guangzhou</string>
+        <string>stage-zufang-meiwo-guanjia</string>
+        <string>stage-zufang-meiwo-zufang</string>
+        <string>test-zufang-guangzhou</string>
+        <string>test-zufang-meiwo-guanjia</string>
+        <string>test-zufang-meiwo-zufang</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>nxb-farm</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[23]/jobNames/comparator"/>
+        <string>release-nxb-farm-frontend</string>
+        <string>release-nxb-farm-task</string>
+        <string>release-nxb-farm-web</string>
+        <string>test-nxb-farm-frontend</string>
+        <string>test-nxb-farm-task</string>
+        <string>test-nxb-farm-web</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-capital</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[23]/jobNames/comparator"/>
+        <string>autobuild-capital-backend-prebuild</string>
+        <string>autobuild-capital-frontend-prebuild</string>
+        <string>autobuild-capital-vcard_niu</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Ticket</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>^[a-z]+-data-ticket-.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>spacebox-test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[29]/jobNames/comparator"/>
+        <string>spacebox-activity-test</string>
+        <string>spacebox-config-upload</string>
+        <string>spacebox-itopia-backend-test</string>
+        <string>spacebox-management-frontend-test</string>
+        <string>spacebox-management-test</string>
+        <string>spacebox-official-website-test</string>
+        <string>spacebox-scheduler-test</string>
+        <string>spacebox_socket_server_test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>数据运营</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[29]/jobNames/comparator"/>
+        <string>原始-数据运营-接口项目</string>
+        <string>巴西项目</string>
+        <string>正式-数据运营</string>
+        <string>测试-数据运营</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>o2o-prod</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>o2o-all-prod</string>
+        <string>o2o-ams-server-prod</string>
+        <string>o2o-authorization-server-prod</string>
+        <string>o2o-batch-prod</string>
+        <string>o2o-business-admin-prod</string>
+        <string>o2o-business-api-prod</string>
+        <string>o2o-business-clerk-prod</string>
+        <string>o2o-business-merchant-prod</string>
+        <string>o2o-developer-manager-prod</string>
+        <string>o2o-dubbo-app-push-prod</string>
+        <string>o2o-dubbo-capital-prod</string>
+        <string>o2o-dubbo-common-prod</string>
+        <string>o2o-dubbo-deduct-prod</string>
+        <string>o2o-dubbo-deduct-task-prod</string>
+        <string>o2o-dubbo-goods-prod</string>
+        <string>o2o-dubbo-order-prod</string>
+        <string>o2o-dubbo-payment-prod</string>
+        <string>o2o-dubbo-payment-task-prod</string>
+        <string>o2o-dubbo-push-prod</string>
+        <string>o2o-dubbo-second-account-prod</string>
+        <string>o2o-dubbo-user-prod</string>
+        <string>o2o-dubbo-weixin-prod</string>
+        <string>o2o-export-prod</string>
+        <string>o2o-front-api-docs-prod</string>
+        <string>o2o-front-cashloan-prod</string>
+        <string>o2o-front-clerk-prod</string>
+        <string>o2o-front-developer-manager-prod</string>
+        <string>o2o-front-newadmin-prod</string>
+        <string>o2o-front-prod</string>
+        <string>o2o-front-shopmanager-prod</string>
+        <string>o2o-kafka-consumer-prod</string>
+        <string>o2o-merchant-server-prod</string>
+        <string>o2o-ops-script</string>
+        <string>o2o-platform-eureka-prod</string>
+        <string>o2o-rsync-prod</string>
+        <string>o2o-server-prod</string>
+        <string>o2o-task-prod</string>
+        <string>weo2omob-server-prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>proxy_pool</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>proxy-pool-java_prod</string>
+        <string>proxy-pool-jiun-prod</string>
+        <string>proxy-pool-monitor-prod</string>
+        <string>proxy-pool_prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-quant</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>autobuild-quant-backend</string>
+        <string>testjob</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-o2o</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+        <string>autobuild-o2o-batch</string>
+        <string>autobuild-o2o-business-admin</string>
+        <string>autobuild-o2o-business-api</string>
+        <string>autobuild-o2o-business-merchant</string>
+        <string>autobuild-o2o-business-overdue</string>
+        <string>autobuild-o2o-developer-manager</string>
+        <string>autobuild-o2o-dubbo-capital</string>
+        <string>autobuild-o2o-dubbo-common</string>
+        <string>autobuild-o2o-dubbo-deduct</string>
+        <string>autobuild-o2o-dubbo-goods</string>
+        <string>autobuild-o2o-dubbo-order</string>
+        <string>autobuild-o2o-dubbo-post-loan</string>
+        <string>autobuild-o2o-dubbo-user</string>
+        <string>autobuild-o2o-dubbo-weixin</string>
+        <string>autobuild-o2o-front</string>
+        <string>autobuild-o2o-front-cashloan</string>
+        <string>autobuild-o2o-front-clerk</string>
+        <string>autobuild-o2o-front-marketing</string>
+        <string>autobuild-o2o-front-newadmin</string>
+        <string>autobuild-o2o-front-shopmanager</string>
+        <string>autobuild-o2o-push</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>o2o-test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+        <string>o2o-all-test</string>
+        <string>o2o-ams-server-test</string>
+        <string>o2o-authorization-server-test</string>
+        <string>o2o-batch-test</string>
+        <string>o2o-business-admin-test</string>
+        <string>o2o-business-api-test</string>
+        <string>o2o-business-clerk-test</string>
+        <string>o2o-business-merchant-test</string>
+        <string>o2o-developer-manager-test</string>
+        <string>o2o-dubbo-app-push-test</string>
+        <string>o2o-dubbo-capital-test</string>
+        <string>o2o-dubbo-common-test</string>
+        <string>o2o-dubbo-deduct-test</string>
+        <string>o2o-dubbo-goods-test</string>
+        <string>o2o-dubbo-order-test</string>
+        <string>o2o-dubbo-payment-test</string>
+        <string>o2o-dubbo-push-test</string>
+        <string>o2o-dubbo-second-account-test</string>
+        <string>o2o-dubbo-user-test</string>
+        <string>o2o-dubbo-weixin-test</string>
+        <string>o2o-front-cashloan-test</string>
+        <string>o2o-front-clerk-test</string>
+        <string>o2o-front-developer-manager-test</string>
+        <string>o2o-front-newadmin-test</string>
+        <string>o2o-front-shopmanager-test</string>
+        <string>o2o-front-test</string>
+        <string>o2o-kafka-consumer-test</string>
+        <string>o2o-merchant-server-test</string>
+        <string>o2o-ops-script-test</string>
+        <string>o2o-platform-eureka-test</string>
+        <string>o2o-server-test</string>
+        <string>o2o-task-test</string>
+        <string>o2o-weo2omob-server-test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-bi</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+        <string>autobuild-bi-data-bee</string>
+        <string>autobuild-bi-external-api</string>
+        <string>autobuild-bi-future-front</string>
+        <string>autobuild-bi-future-manage-front</string>
+        <string>autobuild-bi-future-matrix</string>
+        <string>autobuild-bi-future-vision-front</string>
+        <string>autobuild-bi-hike-fair</string>
+        <string>autobuild-bi-job</string>
+        <string>autobuild-bi-slushy-lane-front</string>
+        <string>autobuild-bi-storm-front</string>
+        <string>autobuild-bi-wke-chaos</string>
+        <string>autobuild-bi-wpage</string>
+        <string>autobuild-bi-wpage-web</string>
+        <string>prod-bi-jupyter_server</string>
+        <string>prod-bi-kronos</string>
+        <string>prod-bi-notebook-schedule</string>
+        <string>prod-bi-ScoreService</string>
+        <string>prod-bi-wke-web</string>
+        <string>stage-bi-wke-fogweb</string>
+        <string>test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Consumer-Prod</name>
+      <description>C端 北京VPC 生产环境 发布项目</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+        <string>consumer-front_baiwan-prod</string>
+        <string>consumer-front_bridge-prod</string>
+        <string>consumer-front_bridge_backend-prod</string>
+        <string>consumer-front_finance-prod</string>
+        <string>consumer-front_mall_loan-prod</string>
+        <string>consumer-front_mall_system-prod</string>
+        <string>consumer-front_mobile-prod</string>
+        <string>consumer-front_mobile_wecash-prod</string>
+        <string>consumer-front_offical_website-prod</string>
+        <string>consumer-front_primeloan-prod</string>
+        <string>consumer-front_primeloan_system-prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <jenkins.branch.DescriptionColumn plugin="branch-api@2.0.20"/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Consumer-Test</name>
+      <description>C端 北京VPC 测试环境 发布项目</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+        <string>consumer-all_services-test</string>
+        <string>consumer-front-beeb-test</string>
+        <string>consumer-front_bridge-test</string>
+        <string>consumer-front_bridge_backend-test</string>
+        <string>consumer-front_mall_loan-test</string>
+        <string>consumer-front_mall_system-test</string>
+        <string>consumer-front_mobile-test</string>
+        <string>consumer-front_mobile_new-test</string>
+        <string>consumer-front_primeloan-test</string>
+        <string>consumer-front_primeloan_system-test</string>
+        <string>consumer-web-beeb-test</string>
+        <string>consumer-web_customer-devvvvv</string>
+        <string>consumer-web_push-test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <jenkins.branch.DescriptionColumn plugin="branch-api@2.0.20"/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Consumer-OPS</name>
+      <description>C端 北京VPC 运维项目</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+        <string>consumer-devops-apollo_conf-prod</string>
+        <string>consumer-devops-file</string>
+        <string>consumer-devops-init-new_dubbo</string>
+        <string>consumer-devops-init-new_job</string>
+        <string>consumer-devops-init-new_tomcat</string>
+        <string>consumer-devops-nginx_conf-prod</string>
+        <string>consumer-devops-nginx_stage_conf-test</string>
+        <string>consumer-devops-nginx_system_conf-prod</string>
+        <string>consumer-devops-sonar_mall</string>
+        <string>consumer-devops-sync-dubbo-config</string>
+        <string>consumer-devops-sync-tomcat-config</string>
+        <string>consumer-devops-upload_apk-prod</string>
+        <string>consumer-devops-upload_contract-prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <jenkins.branch.DescriptionColumn plugin="branch-api@2.0.20"/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Consumer-Preprod</name>
+      <description>C端 北京VPC 预生产环境 发布项目</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+        <string>consumer-all-services-preprod</string>
+        <string>consumer-front_bridge-preprod</string>
+        <string>consumer-front_mall_loan-preprod</string>
+        <string>consumer-front_mall_system-preprod</string>
+        <string>consumer-front_mobile-preprod</string>
+        <string>consumer-front_mobile_wecash-preprod</string>
+        <string>consumer-front_primeloan-preprod</string>
+        <string>consumer-web_push-preprod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <jenkins.branch.DescriptionColumn plugin="branch-api@2.0.20"/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>ShanDun</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[34]/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>^[^-]+-data-shandun-.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>capital-API-test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>capital-merchant-api-test</string>
+        <string>capital-platform-deposit-front-test</string>
+        <string>capital-platform-frontend-test</string>
+        <string>capital-platform-job-test</string>
+        <string>capital-platform-task-test</string>
+        <string>capital-platform-timer-test</string>
+        <string>capital-platform-vcard_niu-test</string>
+        <string>capital-platform-web-test-02</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>纳米信贷测试环境</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>nano-features-jingd-new-test</string>
+        <string>nano-features-jingd-test</string>
+        <string>nano-features-kunshan-test</string>
+        <string>nano-features-opreator-test</string>
+        <string>nano-features-payday_model-test</string>
+        <string>nano-features-payday_score-test</string>
+        <string>nano-features-taobao-new-test</string>
+        <string>nano-features-taobao-test</string>
+        <string>nano-features-weflask-prod</string>
+        <string>nano-features-zero_cost_model-test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>大额贷测试</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[44]/jobNames/comparator"/>
+        <string>prime-anti_fraud_pl-test</string>
+        <string>prime-kunshan-test</string>
+        <string>prime-nano_taobao-test</string>
+        <string>prime-nearprime_model-test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>nano-prime</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[44]/jobNames/comparator"/>
+        <string>prod-nano-prime-frontend</string>
+        <string>test-nano-near-prime</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>XLab-前端</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>xlab-front_game-dev</string>
+        <string>xlab-front_game-prod</string>
+        <string>xlab-front_index-dev</string>
+        <string>xlab-front_index-prod</string>
+        <string>xlab-front_wechat-prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <jenkins.branch.DescriptionColumn plugin="branch-api@2.0.20"/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>xlab-front.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-nano</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[47]/jobNames/comparator"/>
+        <string>autobuild-nano-cloud-contact-center</string>
+        <string>autobuild-nano-cloud-out-call</string>
+        <string>autobuild-nano-near-prime</string>
+        <string>autobuild-nano-sms-center</string>
+        <string>autobuild-nano-solon</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>XLab-后台</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[47]/jobNames/comparator"/>
+        <string>xlab-backend_app-dev</string>
+        <string>xlab-backend_app-prod</string>
+        <string>xlab-backend_auction-dev</string>
+        <string>xlab-backend_auction-prod</string>
+        <string>xlab-backend_game-prod</string>
+        <string>xlab-backend_log-pusher-prod</string>
+        <string>xlab-backend_management-dev</string>
+        <string>xlab-backend_management-prod</string>
+        <string>xlab-backend_pay-dev</string>
+        <string>xlab-backend_pay-prod</string>
+        <string>xlab-backend_unionpay-dev</string>
+        <string>xlab-backend_unionpay-prod</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <jenkins.branch.DescriptionColumn plugin="branch-api@2.0.20"/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <includeRegex>xlab-backend.*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-nzb</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>autobuild-nzb-frontend</string>
+        <string>autobuild-nzb-future</string>
+        <string>autobuild-nzb-platform</string>
+        <string>autobuild-nzb-shop-frontend</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@1.6.4"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>autobuild-nano-features</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[50]/jobNames/comparator"/>
+        <string>autobuild-nano-feature-test</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@1.6.4"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>spacebox-stage</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>spacebox-activity-stage</string>
+        <string>spacebox-itopia-backend-stage</string>
+        <string>spacebox-management-frontend-stage</string>
+        <string>spacebox-management-stage</string>
+        <string>spacebox-scheduler-stage</string>
+        <string>spacebox_socket_server_stage</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@1.6.4"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+  </views>
+  <primaryView>all</primaryView>
+  <slaveAgentPort>50000</slaveAgentPort>
+  <label></label>
+  <nodeProperties/>
+  <globalNodeProperties>
+    <hudson.slaves.EnvironmentVariablesNodeProperty>
+      <envVars serialization="custom">
+        <unserializable-parents/>
+        <tree-map>
+          <default>
+            <comparator class="hudson.util.CaseInsensitiveComparator"/>
+          </default>
+          <int>2</int>
+          <string>CURL_CA_BUNDLE</string>
+          <string>/etc/ssl/certs/ca-certificates.crt</string>
+          <string>email_list</string>
+          <string>gonghui@wecash.net,wangxingmin@wecash.net</string>
+        </tree-map>
+      </envVars>
+    </hudson.slaves.EnvironmentVariablesNodeProperty>
+  </globalNodeProperties>
+  <noUsageStatistics>true</noUsageStatistics>
+</hudson>
