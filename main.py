@@ -43,14 +43,16 @@ class Jenkins_Manage(object):
         j2_env = Environment(loader=FileSystemLoader('config'),
                              trim_blocks=True)
         template = j2_env.get_template('multibranch_config.xml')
-        for i in msg[jobtype]:
+        for department,msg in msg[jobtype].items():
+            for config in msg:
             # 通过giturl地址，截取项目名称，以此命名jenkins job
-            jobname = re.split(r'[\/,\.]',i['giturl'])[-2]
-            rendered_file = template.render(i)
-            configs[jobname] = rendered_file
+                projectname = re.split(r'[\/,\.]',config['giturl'])[-2]
+                jobname= "autobuild-{0}-{1}".format(department,projectname)
+                rendered_file = template.render(config)
+                configs[jobname] = rendered_file
         return configs
 
-    def Create_jobs(self,jobheader,ymlfilepath,jobtype):
+    def Create_jobs(self,ymlfilepath,jobtype):
         configs = self.Generate_job_config(ymlfilepath,jobtype)
         for jobname,config in configs.items():
             self.server.create_job(jobname,config)
@@ -88,8 +90,9 @@ class Jenkins_Manage(object):
         print(config)
 
 jm = (Jenkins_Manage())
-temp = jm.Create_jobs('config/defaults.yml','multibranch_job')
+#temp = jm.Generate_variables('config/defaults.yml')
 #temp = jm.Create_view('test','config/view_config.xml','view_template')
-temp = jm.Create_view('config/defaults.yml','view_template')
-temp = jm.Get_version()
+#temp = jm.Generate_job_config('config/defaults.yml','multibranch_job')
+#temp = jm.Create_view('config/defaults.yml','view_template')
+temp = jm.Create_jobs('config/defaults.yml','multibranch_job')
 print(temp)
